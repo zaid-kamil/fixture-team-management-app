@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="clubs">
+    <section id="grid-container-fixture-club-player">
+        {% for team in teams %}
+        <div class="small-clubs">
+            <a href="/clubs/{{ team.id }}">{{team.team_name}}</a>
+        </div>
+        {% endfor %}
+    </section>
+</div>
+<div class="main-text">
+    <h1>About the Fictional league</h1>
+    <p>Welcome to the Fictional League home page. Learn more about the clubs and players and view fixtures and keep up to date with the league table.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+
+
+{% endblock %}

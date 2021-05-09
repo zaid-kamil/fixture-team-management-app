@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<content class="club-player-fixture-background">
+    <div>
+        <h3>{{team.team_name}}</h3>
+        <hr>
+        <p>Located: {{team.location}}</p>
+        <p>Home ground: {{team.stadium_name}}</p>
+        <p>Stadium capacity: {{team.stadium_capacity}}</p>
+    </div>
+    <a href="/clubs/players">View Players</a>
+
+    <h3>Results</h3>
+    {% for fixture in fixtures %}
+     {% if fixture.team1.team_name ==  team.team_name or fixture.team2.team_name  ==  team.team_name  %}
+    <p>{{fixture.team1.team_name}} {{fixture.team1.score}} v {{fixture.team2.score}} {{fixture.team2.team_name}}</p>
+    {% endif %}
+    {% endfor %}
+
+</content>
+
+
+
+{% endblock %}

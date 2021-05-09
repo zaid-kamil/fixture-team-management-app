@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block content %}
+<content class="club-player-fixture-background">
+<h2>Update a Club</h2>
+<form action="/clubs/{{ team.id }}" method="POST">
+    <div>
+        <label for="team_name">Name:</label>
+        <input type="text" 
+        id="team_name" 
+        name="team_name" 
+        value="{{ team.team_name }}"
+        >
+    </div>
+    <div>
+        <label for="location">Location:</label>
+        <input type="text" 
+        id="location" 
+        name="location" 
+        value="{{ team.location }}"
+        >       
+    </div>
+    <div>
+        <label for="stadium_name">Stadium Name:</label>
+        <input type="text" 
+        id="stadium_name" 
+        name="stadium_name" 
+        value="{{ team.stadium_name }}"
+        >
+    </div>
+    <div>
+        <label for="stadium_capacity">Stadium Capacity:</label>
+        <input type="number" 
+        id="stadium_capacity" 
+        name="stadium_capacity" 
+        value="{{ team.stadium_capacity }}">       
+    </div>
+    <div>
+        <label for="fixtures_played">Played:</label>
+        <input type="number" 
+        id="fixtures_played" 
+        name="fixtures_played" 
+        value="{{ team.fixtures_played }}"
+        >
+    </div>
+    <div>
+        <label for="fixtures_won">Won:</label>
+        <input type="number" 
+        id="fixtures_won" 
+        name="fixtures_won" 
+        value="{{ team.fixtures_won }}"
+        >       
+    </div>
+    <div>
+        <label for="fixtures_drawn">Drawn:</label>
+        <input type="number" 
+        id="fixtures_drawn" 
+        name="fixtures_drawn" 
+        value="{{ team.fixtures_drawn }}"
+        >
+    </div>
+    <div>
+        <label for="fixtures_lost">Lost:</label>
+        <input type="number" 
+        id="fixtures_lost" 
+        name="fixtures_lost" 
+        value="{{ team.fixtures_lost }}"
+        >       
+    </div>
+    <div>
+        <label for="points">Points:</label>
+        <input type="number" 
+        id="points" 
+        name="points" 
+        value="{{ team.points }}"
+        >
+    </div>
+    <div>
+        <label for="score">Score:</label>
+        <input type="number" 
+        id="score" 
+        name="score" 
+        value="{{ team.score }}"
+        >
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>
+</content>
+{% endblock %}

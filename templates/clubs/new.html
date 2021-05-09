@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block content %}
+<content class="club-player-fixture-background">
+<h2>Add a New Club</h2>
+<form action="/clubs" method="POST">
+    <div>
+        <label for="team_name">Club name:</label>
+        <input 
+        type="text" 
+        id="team_name" 
+        name="team_name" 
+        placeholder="Team name">
+    </div>
+    <div>
+        <label for="location">Location:</label>
+        <input 
+        type="text" 
+        id="location" 
+        name="location" 
+        placeholder="Location">       
+    </div>
+    <div>
+        <label for="stadium_name">Stadium Name:</label>
+        <input 
+        type="text" 
+        id="stadium_name" 
+        name="stadium_name"
+        placeholder="Stadium">       
+    </div>
+    <div>
+        <label for="stadium_capacity">Stadium Capacity:</label>
+        <input 
+        type="number" 
+        id="stadium_capacity" 
+        name="stadium_capacity"
+        placeholder="Capacity">       
+    </div>
+    <div>
+        <label for="fixtures_played">Played:</label>
+        <input 
+        type="number" 
+        id="fixtures_played" 
+        name="fixtures_played"
+        placeholder="Games played">       
+    </div>
+    <div>
+        <label for="fixtures_won">Won:</label>
+        <input 
+        type="number" 
+        id="fixtures_won" 
+        name="fixtures_won"
+        placeholder="Games won">       
+    </div>
+    <div>
+        <label for="fixtures_drawn">Drawn:</label>
+        <input 
+        type="number" 
+        id="fixtures_drawn" 
+        name="fixtures_drawn"
+        placeholder="Games drawn">       
+    </div>
+    <div>
+        <label for="fixtures_lost">Lost:</label>
+        <input 
+        type="number" 
+        id="fixtures_lost" 
+        name="fixtures_lost"
+        placeholder="Games lost">       
+    </div>
+    <div>
+        <label for="points">Points:</label>
+        <input 
+        type="number" 
+        id="points" 
+        name="points"
+        placeholder="Points">       
+    </div>
+    <div>
+        <label for="score">Score:</label>
+        <input 
+        type="number" 
+        id="score" 
+        name="score"
+        placeholder="Goals scored">       
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>
+</content>
+{% endblock %}

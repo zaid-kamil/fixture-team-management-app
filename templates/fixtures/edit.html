@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+<content class="club-player-fixture-background">
+    <h2>Update a Fixture</h2>
+
+    <!-- Setting up form to edit fixture, ensuring the teams from the fixture are displayed as the initial choices -->
+    <form action="/fixtures/{{ fixture.id }}" method="POST">
+        <div>
+            <label for="team1">Home Team:</label>
+            <select name="team1" id="team1" selected="{{ fixture.team1 }}">
+                {% for team in teams %}
+                {% if team.id == fixture.team1 %}
+                <option value="{{ team.id }}" selected>{{ team.team_name }}</option>
+                {% else %}
+                <option value="{{ team.id }}">{{ team.team_name }}</option>
+                {% endif %}
+
+                {% endfor %}
+            </select>
+            <!-- commenting out until working method for adding score to club/team added -->
+            <!-- <label for="fixture.team1.score">Score:</label>
+            <select name="fixture.team1.score" id="fixture.team1.score" value="{{ fixture.team1.score }}">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select> -->
+        </div>
+        <div>
+            <label for="team2">Away Team:</label>
+            <select name="team2" id="team2" selected="{{ fixture.team2 }}">
+                {% for team in teams %}
+                {% if team.id == fixture.team2 %}
+                <option value="{{ team.id }}" selected>{{ team.team_name }}</option>
+                {% else %}
+                <option value="{{ team.id }}">{{ team.team_name }}</option>
+                {% endif %}
+
+                {% endfor %}
+            </select>
+            <!-- commenting out until working method for adding score to club/team added -->
+            <!-- <label for="team2_score">Score:</label>
+            <select name="team2_score" id="team2_score" value="{{ fixture.team2.score }}">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select> -->
+        </div>
+
+        <div>
+            <input type="submit">
+        </div>
+    </form>
+</content>
+{% endblock %}

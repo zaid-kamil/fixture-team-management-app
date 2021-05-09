@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<section class="main-table">
+    <p>Welcome to the Fictional League table. Keep up to date with the league table here.</p>
+    <h1>Full league table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Club</th>
+                <th>Played</th>
+                <th>Won</th>
+                <th>Drawn</th>
+                <th>Lost</th>
+                <th>Goals</th>
+                <th>Points</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for team in teams %}
+            <tr>
+                <td> <a href="/clubs/{{ team.id }}/edit">{{ team.team_name }}</a></td>
+                <td>{{ team.fixtures_played }}</td>
+                <td>{{ team.fixtures_won }}</td>
+                <td>{{ team.fixtures_drawn }}</td>
+                <td>{{ team.fixtures_lost }}</td>
+                <td>{{ team.score }}</td>
+                <td>{{ team.points }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+{% endblock %}

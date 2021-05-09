@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="club-player-fixture-background">
+    <h1>Fixture information</h1>
+
+    <button class="buttons"><a href="/fixtures/new">Add a fixture</a></button>
+    <section id="grid-container-fixture-club-player">
+        {% for fixture in all_fixtures %}
+        <section class="fixtures">
+            <p>{{fixture.team1.team_name}} v {{fixture.team2.team_name}}</p>
+            {% if fixture.determine_winner() == None %}
+            <p>The match ended in a draw!</p>
+            {% else %}
+            <p>{{ fixture.determine_winner() }} won, the final score was <strong>{{ fixture.team1.score }}-{{ fixture.team2.score }}</strong>.</p>
+
+            {% endif %}
+
+            <a href="/fixtures/{{ fixture.id }}/edit">Edit</a>
+
+            <form action="/fixtures/{{ fixture.id }}/delete" method="POST">
+                <input type="submit" value="Delete">
+            </form>
+
+        </section>
+        {% endfor %}
+    </section>
+</section>
+
+{% endblock %}

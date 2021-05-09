@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<content class="club-player-fixture-background">
+<h2>Update a Player</h2>
+
+<form action="/clubs/players/{{ player.id }}" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" 
+        id="name" 
+        name="name" 
+        value="{{ player.name }}"
+        >
+    </div>
+    <div>
+        <label for="player_info">Player Bio:</label>
+        <input class="text-box" type="text" id="player_info" 
+        name="player_info" 
+        value="{{ player.player_info }}"
+        >       
+    </div>
+    <div>
+        <label for="goals_scored">Goals scored:</label>
+        <input type="number" 
+        id="goals_scored" 
+        name="goals_scored" 
+        value="{{ player.goals_scored }}"
+        >
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>
+</content>
+{% endblock %}
